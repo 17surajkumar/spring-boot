@@ -112,7 +112,7 @@ public class Main {
     }
 
     private static void searchAccounts(Scanner scanner,BankService bankService) {
-        System.out.println("Customer name contains: ");
+        System.out.println("Enter the Customer name contains: ");
         String q = scanner.nextLine().trim();
         bankService.searchAccountByCustomerName(q).forEach(account ->
                 System.out.println(account.getAccountNumber() + " | " + account.getAccountType() + " | " + account.getBalance()));
