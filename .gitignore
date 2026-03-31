@@ -1,0 +1,14 @@
+# IntelliJ
+.idea/
+*.iml
+
+# Java
+target/
+out/
+*.class
+
+# Logs
+*.log
+
+# OS
+.DS_Store
