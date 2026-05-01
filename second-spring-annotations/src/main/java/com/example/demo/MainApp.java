@@ -9,23 +9,34 @@ public class MainApp {
 
 
     public static void main(String[] args) {
-        ApplicationContext context =
-                new AnnotationConfigApplicationContext(AppConfig.class);
+//        ApplicationContext context =
+//                new AnnotationConfigApplicationContext(AppConfig.class);
 
 //        GreetingService greetingService =
 //                (GreetingService) context.getBean("myBean");
 
-        GreetingService greetingService = context.getBean(GreetingService.class);
-        greetingService.sayHello();
+//        GreetingService greetingService = context.getBean(GreetingService.class);
+//        greetingService.sayHello();
 
 
-        UserService userServiceSMS = context.getBean(UserService.class);
-        userServiceSMS.notifyUser("Whats Up!");
+//        UserService userServiceSMS = context.getBean(UserService.class);
+//        userServiceSMS.notifyUser("Whats Up!");
         
 //
 //        UserService userServiceEmail =
 //                (UserService) context.getBean("UserServiceEmail");
 //        userServiceEmail.notifyUser("Whats Up!");
+
+
+        System.out.println("Starting Spring Application Context");
+        ApplicationContext context =
+                new AnnotationConfigApplicationContext(AppConfig.class);
+
+        System.out.println("Retrieving Lifecycle Bean");
+        LifecycleBean lifecycleBean = context.getBean(LifecycleBean.class);
+        lifecycleBean.performTask();
+        System.out.println("Closing Spring Context");
+
     }
 
 
